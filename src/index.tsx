@@ -81,7 +81,7 @@ function main(context: types.IExtensionContext) {
     }
     readModContent(path.join(stagingPath, mod.installationPath), gameId)
       .then(({ typesFound, empty }) => {
-        const hasFomodOptions = mod.attributes?.installerChoices?.type === 'fomod' && (mod.attributes?.installerChoices?.choices ?? []).length > 0;
+        const hasFomodOptions = mod.attributes?.installerChoices?.type === 'fomod' && (mod.attributes?.installerChoices?.options ?? []).length > 0;
         if (hasFomodOptions) {
           typesFound.push('fomod');
           empty = false;
