@@ -7,3 +7,4 @@ mod-content.7z
 src/Readme.txt
 src/demo.html
 src/style.css
+.DS_Store
