@@ -66,12 +66,12 @@ export const fileTypes: { [ext: string]: IFileType[] } = {
   '.cmd': [{ type: 'executable' }],
   '.jar': [{ type: 'executable' }],
   '.py': [{ type: 'executable', condition: gameId => !gamesUsingPythonScripting.has(gameId) },
-          { type: 'script', condition: gameId => gamesUsingPythonScripting.has(gameId) }],
+    { type: 'script', condition: gameId => gamesUsingPythonScripting.has(gameId) }],
 
   '.swf': [{ type: 'interface' }],
   '.xml': [{ type: 'config' }],
   '.json': [{ type: 'config',
-              condition: (gameId, entry) => path.basename(entry.filePath) !== 'manifest.json' }],
+    condition: (gameId, entry) => path.basename(entry.filePath) !== 'manifest.json' }],
   '.ini': [{ type: 'config' }],
 
   '.wav': [{ type: 'music' }],
@@ -98,7 +98,7 @@ export const fileTypes: { [ext: string]: IFileType[] } = {
   '.esl': [{ type: 'plugin' }],
   '.pex': [{ type: 'script' }],
   '.dll': [{ type: 'extender', condition: supportsScriptExtender },
-           { type: 'plugin', condition: gameId => gamesUsingDLLPlugins.has(gameId) }],
+    { type: 'plugin', condition: gameId => gamesUsingDLLPlugins.has(gameId) }],
   '.hkx': [{ type: 'animation' }],
 
   // sims 4

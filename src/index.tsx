@@ -45,7 +45,7 @@ function readModContent(stagingPath: string, gameId: string)
         });
     });
   }, false)
-  .then(() => ({ typesFound: Array.from(typesFound), empty }));
+    .then(() => ({ typesFound: Array.from(typesFound), empty }));
 }
 
 function capitalize(input: string): string {
@@ -116,14 +116,14 @@ function main(context: types.IExtensionContext) {
     calc: (mod: types.IMod) => util.getSafe(mod, ['attributes', 'content'], []).map(capitalize),
     filter: new OptionsFilter(() =>
       [].concat([{ value: OptionsFilter.EMPTY, label: `<${context.api.translate('No Content')}>` }],
-        Object
-          .keys(typeDescription)
-          .sort()
-          .map(id => {
-            const capId = capitalize(id);
-            return { value: capId, label: context.api.translate(capId) };
-          }))
-        , true, false),
+                Object
+                  .keys(typeDescription)
+                  .sort()
+                  .map(id => {
+                    const capId = capitalize(id);
+                    return { value: capId, label: context.api.translate(capId) };
+                  }))
+    , true, false),
     isToggleable: true,
     edit: {},
     isSortable: true,
